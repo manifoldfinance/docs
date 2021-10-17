@@ -135,8 +135,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
-- FAQ: faq.md
 - Omnibus: index.md
+- FAQ: faq.md
 - OpenMEV & Sushiswap: sushiswap-overview.md
 - Network:
   - Getting Started: Network/README.md
@@ -229,9 +229,3 @@ nav:
     - OrderPostError: SushiSwap/Models/OrderPostError.md
     - OrderType: SushiSwap/Models/OrderType.md
     - Trade: SushiSwap/Models/Trade.md
-- Technical:
-  - spec:
-    - Platform Specification and Diagrams: Technical/spec/README.md
-  - workflow:
-    - Event Tracing: Technical/workflow/EVENT_TRACING.md
-    - Generalized Workflows and Strategies: Technical/workflow/README.md
