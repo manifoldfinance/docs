@@ -420,19 +420,4 @@
          <lastmod>2021-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
-    <url>
-         <loc>https://docs.manifoldfinance.com/Technical/spec/</loc>
-         <lastmod>2021-10-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.manifoldfinance.com/Technical/workflow/</loc>
-         <lastmod>2021-10-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.manifoldfinance.com/Technical/workflow/EVENT_TRACING/</loc>
-         <lastmod>2021-10-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
 </urlset>
