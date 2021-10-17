@@ -6,13 +6,12 @@ sort: 3
 
 > Documentation for Order Book API
 
-
 ## Endpoints
 
 ### [`/swap/summary`](https://7ob2ikxqn7.execute-api.us-east-1.amazonaws.com/dev//swap/summary)
 
-Returns data for the top ~1000 SushiSwap pairs, sorted by reserves. Results are
-edge cached for 15 minutes.
+Returns data for the top ~1000 SushiSwap pairs, sorted by reserves. Results are edge cached for 15
+minutes.
 
 #### Request
 
@@ -34,8 +33,8 @@ edge cached for 15 minutes.
 
 ### [`/swap/assets`](https://7ob2ikxqn7.execute-api.us-east-1.amazonaws.com/dev/swap/assets)
 
-Returns the tokens in the top ~1000 pairs on SushiSwap, sorted by reserves.
-Results are edge cached for 24 hours.
+Returns the tokens in the top ~1000 pairs on SushiSwap, sorted by reserves. Results are edge cached
+for 24 hours.
 
 #### Request
 
@@ -60,8 +59,8 @@ Results are edge cached for 24 hours.
 
 ### [`/swap/tickers`](https://7ob2ikxqn7.execute-api.us-east-1.amazonaws.com/dev/swap/tickers)
 
-Returns data for the top ~1000 SushiSwap pairs, sorted by reserves. Results are
-edge cached for 1 minute.
+Returns data for the top ~1000 SushiSwap pairs, sorted by reserves. Results are edge cached for 1
+minute.
 
 #### Request
 
@@ -89,10 +88,10 @@ edge cached for 1 minute.
 
 ### `/swap/orderbook/:pair`
 
-Returns simulated orderbook data for the given SushiSwap pair. Since Uniswap has
-a continuous orderbook, fixed amounts in an interval are chosen for bids and
-asks, and prices are derived from the SushiSwap formula (accounting for both
-slippage and fees paid to LPs). Results are edge cached for 240 minutes.
+Returns simulated orderbook data for the given SushiSwap pair. Since Uniswap has a continuous
+orderbook, fixed amounts in an interval are chosen for bids and asks, and prices are derived from
+the SushiSwap formula (accounting for both slippage and fees paid to LPs). Results are edge cached
+for 240 minutes.
 
 #### Request
 
@@ -100,8 +99,8 @@ slippage and fees paid to LPs). Results are edge cached for 240 minutes.
 
 #### URL Parameters
 
-- `pair`: The asset ids of two ERC20 tokens, joined by an underscore, e.g.
-  `0x..._0x...`. The first token address is considered the base in the response.
+- `pair`: The asset ids of two ERC20 tokens, joined by an underscore, e.g. `0x..._0x...`. The first
+  token address is considered the base in the response.
 
 #### Response
 
@@ -123,16 +122,16 @@ slippage and fees paid to LPs). Results are edge cached for 240 minutes.
 
 ### `/swap/trades/:pair`
 
-Returns all swaps in the last 24 hours for the given SushiSwap pair. Results are
-edge cached for 15 minutes.
+Returns all swaps in the last 24 hours for the given SushiSwap pair. Results are edge cached for 15
+minutes.
 
-The pair address is the address of the two tokens in either order. The first
-address is considered the base in the response.
+The pair address is the address of the two tokens in either order. The first address is considered
+the base in the response.
 
 #### URL Parameters
 
-- `pair`: The asset ids of two ERC20 tokens, joined by an underscore, e.g.
-  `0x..._0x...`. The first token address is considered the base in the response.
+- `pair`: The asset ids of two ERC20 tokens, joined by an underscore, e.g. `0x..._0x...`. The first
+  token address is considered the base in the response.
 
 #### Request
 
@@ -153,7 +152,6 @@ address is considered the base in the response.
   // ...
 ]
 ```
-
 
 ## Documentation for API Endpoints
 

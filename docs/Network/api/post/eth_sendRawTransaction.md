@@ -2,8 +2,7 @@
 
 ## /v1/jsonrpc/:network/eth_sendRawTransaction
 
-Creates new message call transaction or a contract creation for signed
-transactions.
+Creates new message call transaction or a contract creation for signed transactions.
 
 ### REQUEST
 
@@ -41,11 +40,11 @@ curl https://mainnet.backbonecabal.xyz/ \
 
 #### RESULT FIELDS
 
-- `TRANSACTION HASH` - 32 Bytes - the transaction hash, or the zero hash
-  if the transaction is not yet available
+- `TRANSACTION HASH` - 32 Bytes - the transaction hash, or the zero hash if the transaction is not
+  yet available
 
-NOTE - Use `eth_getTransactionReceipt` to get the contract address,
-after the transaction was mined, when you created a contract.
+NOTE - Use `eth_getTransactionReceipt` to get the contract address, after the transaction was mined,
+when you created a contract.
 
 #### BODY
 

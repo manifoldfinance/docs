@@ -1,0 +1,12 @@
+*.yml
+_tmp/
+material/
+build/
+dist/
+*.css
+*.html
+*.scss
+*.xml
+site/
+typings/
+

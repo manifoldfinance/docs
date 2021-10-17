@@ -16,8 +16,8 @@ All URIs are relative to *https://api.sushirelay.com*
 
 # **apiV1OrdersGet**
 
-> List apiV1OrdersGet(owner, sellToken, buyToken, includeFullyExecuted,
-> includeInvalidated, includeInsufficientBalance, minValidTo)
+> List apiV1OrdersGet(owner, sellToken, buyToken, includeFullyExecuted, includeInvalidated,
+> includeInsufficientBalance, minValidTo)
 
 Get existing orders.
 

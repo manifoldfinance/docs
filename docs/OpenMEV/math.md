@@ -2,7 +2,7 @@
 
 > Overview of OpenMEV Applications
 
-## SushiSwap 
+## SushiSwap
 
 Rebating Transaction Costs
 
@@ -10,9 +10,9 @@ Rebating a transaction is determined by:
 
 - Is the function that is called in the transaction eligible?
 
-  - By tracking contract function calls we are better able to provide
-    observability in the rebating process, we can also coordinate with teams
-    wishing to provide more incentives for specific actions and behaviors
+  - By tracking contract function calls we are better able to provide observability in the rebating
+    process, we can also coordinate with teams wishing to provide more incentives for specific
+    actions and behaviors
 
 - If yes, what is the percentage that can be rebated?
 
@@ -24,25 +24,23 @@ Rebating a transaction is determined by:
 
 - Calculate the Gas Reporting Index value
 
-  - This uses the gas pricing information from api.txprice.com to calculate the
-    gas pricing information to be used in calculating the rebate amount for your
-    transaction
+  - This uses the gas pricing information from api.txprice.com to calculate the gas pricing
+    information to be used in calculating the rebate amount for your transaction
 
 - Calculate the rebate amount from the bundle profit surplus
-  - We take how much profit the arbitrage made and split it among all eligible
-    trades within that bundle
+  - We take how much profit the arbitrage made and split it among all eligible trades within that
+    bundle
 
 ## Rebate Mechanism
 
-1. Eligible transactions are rebated based on the 80th confidence interval for
-   gas estimation pricing.
+1. Eligible transactions are rebated based on the 80th confidence interval for gas estimation
+   pricing.
 
-2. This is proportionally distributed based on transactional weight. _Note: a
-   naive formula would consider pairings, then slippage tolerance and finally
-   transactional amount_
+2. This is proportionally distributed based on transactional weight. _Note: a naive formula would
+   consider pairings, then slippage tolerance and finally transactional amount_
 
-3. The amount of compensation is the fees less to miners and network
-   operational transactional costs.
+3. The amount of compensation is the fees less to miners and network operational transactional
+   costs.
 
 4. Compensation payouts occur no later than a half hour
 
@@ -74,14 +72,13 @@ Rebating a transaction is determined by:
 | removeLiquidityETHWithPermitSupportingFeeOnTransferTokens |       #       |
 |      removeLiquidityETHSupportingFeeOnTransferTokens      |       #       |
 
-
 ### Rebate Calculations
 
-*Note*: naive implementation, expect changes
+_Note_: naive implementation, expect changes
 
 bundleCost = mev bribe + bundleTxs[1,2,...]
 
-gasAllowance =  mev bribe - bundleTxs[1,2,...]
+gasAllowance = mev bribe - bundleTxs[1,2,...]
 
 BundleTransactionGas[1,2,...] = Individual Gas Cost
 
@@ -93,10 +90,9 @@ max_gasRebate = (BundleId(BundleTransactionGas[1,2,...]))
 
 `targetBlockNumber`: block number at which this bundle is valid
 
-`minTimestamp`:  minimum timestamp at which this bundle is valid (inclusive)
+`minTimestamp`: minimum timestamp at which this bundle is valid (inclusive)
 
- `maxTimestamp`: maximum timestamp at which this bundle is valid (inclusive)
-
+`maxTimestamp`: maximum timestamp at which this bundle is valid (inclusive)
 
 ### MEV Bundle pricing formula
 
@@ -106,24 +102,22 @@ Formula for calculating the pricing of a bundle (flashbots):
 
 $$s_{v0.2} = \frac{\Delta_{coinbase} + \sum_{T\in U}g_Tp_T - \sum_{T\in M \cap U}g_Tp_T}{\sum_{T\in U}g_T}$$
 
-$s$: bundle $U$ _score_ used to sort bundles.
-$U$: ordered list of transactions $T$ in a bundle.
-$M$: set of transactions $T$ in the mempool.
-$g_{T}$: _gas used_ by transaction $T$.
-$p_{T}$: _gas price_ of transaction $T$.
-$\Delta_{coinbase}$: coinbase difference from direct payment.
+$s$: bundle $U$ _score_ used to sort bundles. $U$: ordered list of transactions $T$ in a bundle.
+$M$: set of transactions $T$ in the mempool. $g_{T}$: _gas used_ by transaction $T$. $p_{T}$: _gas
+price_ of transaction $T$. $\Delta_{coinbase}$: coinbase difference from direct payment.
 
 ### Explanation
 
-This formula derives the effective gas price of the bundle by summing up all payments to coinbase as well as gas fees *except* for the gas fees of transactions that have been seen in the mempool.
+This formula derives the effective gas price of the bundle by summing up all payments to coinbase as
+well as gas fees _except_ for the gas fees of transactions that have been seen in the mempool.
 
-The gas fees of mempool transactions are deducted to prevent "stuffing" bundles with high gas price transactions from the mempool to inflate the effective gas price.
-
+The gas fees of mempool transactions are deducted to prevent "stuffing" bundles with high gas price
+transactions from the mempool to inflate the effective gas price.
 
 ## Transactions Status Coding
 
 | Status        | Description                                                                                                                                                                                                                                                                                                                       |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | QUEUED        | The default state when initially creating a transaction during the initial API call. This indicates that this transaction is waiting to be picked up by a background worker.                                                                                                                                                      |
 | PROCESSING    | A background worker has started to process this transaction.                                                                                                                                                                                                                                                                      |
 | FUNDING       | An auxiliary funding transaction is being initiated (this only applies to non-Ether transactions).                                                                                                                                                                                                                                |

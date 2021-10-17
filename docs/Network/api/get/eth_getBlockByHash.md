@@ -14,11 +14,9 @@ Returns information about a block by hash.
 
 #### REQUEST PARAMS
 
-- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes)
-  of a block
-- `SHOW TRANSACTION DETAILS FLAG` _[required]_ - if set to true, it
-  returns the full transaction objects, if false only the hashes of the
-  transactions.
+- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes) of a block
+- `SHOW TRANSACTION DETAILS FLAG` _[required]_ - if set to true, it returns the full transaction
+  objects, if false only the hashes of the transactions.
 
 #### EXAMPLE
 
@@ -45,29 +43,23 @@ curl https://mainnet.backbonecabal.xyz/ \
   - `number`: the block number. null when its pending block.
   - `hash`: 32 Bytes - hash of the block. null when its pending block.
   - `parentHash`: 32 Bytes - hash of the parent block.
-  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when
-    its pending block.
+  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when its pending block.
   - `sha3Uncles`: 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block.
-    null when its pending block.
-  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of
-    the block.
-  - `stateRoot`: 32 Bytes - the root of the final state trie of the
+  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block. null when its pending
     block.
-  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the
-    block.
-  - `miner`: 20 Bytes - the address of the beneficiary to whom the
-    mining rewards were given.
+  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of the block.
+  - `stateRoot`: 32 Bytes - the root of the final state trie of the block.
+  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the block.
+  - `miner`: 20 Bytes - the address of the beneficiary to whom the mining rewards were given.
   - `difficulty`: integer of the difficulty for this block.
-  - `totalDifficulty`: integer of the total difficulty of the chain
-    until this block.
+  - `totalDifficulty`: integer of the total difficulty of the chain until this block.
   - `extraData`: the "extra data" field of this block.
   - `size`: integer the size of this block in bytes.
   - `gasLimit`: the maximum gas allowed in this block.
   - `gasUsed`: the total used gas by all transactions in this block.
   - `timestamp`: the unix timestamp for when the block was collated.
-  - `transactions`: Array - Array of transaction objects, or 32 Bytes
-    transaction hashes depending on the last given parameter.
+  - `transactions`: Array - Array of transaction objects, or 32 Bytes transaction hashes depending
+    on the last given parameter.
   - `uncles`: an Array of uncle hashes.
 
 #### BODY
@@ -106,9 +98,7 @@ curl https://mainnet.backbonecabal.xyz/ \
       "0xf1fa677edda7e5add8e794732c7554cd5459a5c12781dc71de73c7937dfb2775"
     ],
     "transactionsRoot": "0xf98631e290e88f58a46b7032f025969039aa9b5696498efc76baf436fa69b262",
-    "uncles": [
-      "0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"
-    ]
+    "uncles": ["0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"]
   }
 }
 ```

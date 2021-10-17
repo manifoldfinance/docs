@@ -27,8 +27,7 @@ curl -sL https://api.sushirelay.com/v1/eth_accounts
 
 > RESULT FIELDS
 
-- `ADDRESSES` - arrays of hex codes as strings representing the
-  addresses owned by the client
+- `ADDRESSES` - arrays of hex codes as strings representing the addresses owned by the client
 
 > BODY
 
@@ -39,6 +38,7 @@ curl -sL https://api.sushirelay.com/v1/eth_accounts
     result: ["0xc94770007dda54cF92009BFF0dE90c06F603a09f"]
 }
 ```
+
 ## eth_blockNumber
 
 ### v1/jsonrpc/:network/eth_blockNumber
@@ -74,8 +74,7 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `BLOCK NUMBER` - a hex code of an integer representing the current
-  block number the client is on.
+- `BLOCK NUMBER` - a hex code of an integer representing the current block number the client is on.
 
 > BODY
 
@@ -86,6 +85,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: "0x5c174e"
 }
 ```
+
 ## eth_gasPrice
 
 ### v1/jsonrpc/:network/eth_gasPrice
@@ -121,8 +121,7 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `HASHRATE` - a hex code of an integer representing the current gas
-  price in wei.
+- `HASHRATE` - a hex code of an integer representing the current gas price in wei.
 
 > BODY
 
@@ -133,6 +132,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: "0x3b9acde7"
 }
 ```
+
 ## eth_getBalance
 
 ### v1/jsonrpc/:network/eth_getBalance
@@ -147,14 +147,12 @@ Returns the balance of the account of given address.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `ADDRESS` _[required]_ - a string representing the address (20 bytes)
-  to check for balance
+- `ADDRESS` _[required]_ - a string representing the address (20 bytes) to check for balance
 
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
 
 !!! example
@@ -189,6 +187,7 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x29a33d8a9314006"
 }
 ```
+
 ## eth_getBlockByHash
 
 ### v1/jsonrpc/:network/eth_getBlockByHash
@@ -203,14 +202,11 @@ Returns information about a block by hash.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes)
-  of a block
-- `SHOW TRANSACTION DETAILS FLAG` _[required]_ - if set to true, it
-  returns the full transaction objects, if false only the hashes of the
-  transactions.
+- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes) of a block
+- `SHOW TRANSACTION DETAILS FLAG` _[required]_ - if set to true, it returns the full transaction
+  objects, if false only the hashes of the transactions.
 
 !!! example
 
@@ -237,29 +233,23 @@ curl -sL https://api.staging.sushirelay.com/ \
   - `number`: the block number. null when its pending block.
   - `hash`: 32 Bytes - hash of the block. null when its pending block.
   - `parentHash`: 32 Bytes - hash of the parent block.
-  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when
-    its pending block.
+  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when its pending block.
   - `sha3Uncles`: 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block.
-    null when its pending block.
-  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of
-    the block.
-  - `stateRoot`: 32 Bytes - the root of the final state trie of the
+  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block. null when its pending
     block.
-  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the
-    block.
-  - `miner`: 20 Bytes - the address of the beneficiary to whom the
-    mining rewards were given.
+  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of the block.
+  - `stateRoot`: 32 Bytes - the root of the final state trie of the block.
+  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the block.
+  - `miner`: 20 Bytes - the address of the beneficiary to whom the mining rewards were given.
   - `difficulty`: integer of the difficulty for this block.
-  - `totalDifficulty`: integer of the total difficulty of the chain
-    until this block.
+  - `totalDifficulty`: integer of the total difficulty of the chain until this block.
   - `extraData`: the "extra data" field of this block.
   - `size`: integer the size of this block in bytes.
   - `gasLimit`: the maximum gas allowed in this block.
   - `gasUsed`: the total used gas by all transactions in this block.
   - `timestamp`: the unix timestamp for when the block was collated.
-  - `transactions`: Array - Array of transaction objects, or 32 Bytes
-    transaction hashes depending on the last given parameter.
+  - `transactions`: Array - Array of transaction objects, or 32 Bytes transaction hashes depending
+    on the last given parameter.
   - `uncles`: an Array of uncle hashes.
 
 > BODY
@@ -298,12 +288,11 @@ curl -sL https://api.staging.sushirelay.com/ \
       "0xf1fa677edda7e5add8e794732c7554cd5459a5c12781dc71de73c7937dfb2775"
     ],
     "transactionsRoot": "0xf98631e290e88f58a46b7032f025969039aa9b5696498efc76baf436fa69b262",
-    "uncles": [
-      "0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"
-    ]
+    "uncles": ["0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"]
   }
 }
 ```
+
 ## eth_getBlockByNumber
 
 ### v1/jsonrpc/:network/eth_getBlockByNumber
@@ -318,15 +307,13 @@ Returns information about a block by hash.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
-- `SHOW TRANSACTION DETAILS FLAG` _[required]_ - if set to true, it
-  returns the full transaction objects, if false only the hashes of the
-  transactions.
+- `SHOW TRANSACTION DETAILS FLAG` _[required]_ - if set to true, it returns the full transaction
+  objects, if false only the hashes of the transactions.
 
 !!! example
 
@@ -353,29 +340,23 @@ curl -sL https://api.staging.sushirelay.com/ \
   - `number`: the block number. null when its pending block.
   - `hash`: 32 Bytes - hash of the block. null when its pending block.
   - `parentHash`: 32 Bytes - hash of the parent block.
-  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when
-    its pending block.
+  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when its pending block.
   - `sha3Uncles`: 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block.
-    null when its pending block.
-  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of
-    the block.
-  - `stateRoot`: 32 Bytes - the root of the final state trie of the
+  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block. null when its pending
     block.
-  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the
-    block.
-  - `miner`: 20 Bytes - the address of the beneficiary to whom the
-    mining rewards were given.
+  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of the block.
+  - `stateRoot`: 32 Bytes - the root of the final state trie of the block.
+  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the block.
+  - `miner`: 20 Bytes - the address of the beneficiary to whom the mining rewards were given.
   - `difficulty`: integer of the difficulty for this block.
-  - `totalDifficulty`: integer of the total difficulty of the chain
-    until this block.
+  - `totalDifficulty`: integer of the total difficulty of the chain until this block.
   - `extraData`: the "extra data" field of this block.
   - `size`: integer the size of this block in bytes.
   - `gasLimit`: the maximum gas allowed in this block.
   - `gasUsed`: the total used gas by all transactions in this block.
   - `timestamp`: the unix timestamp for when the block was collated.
-  - `transactions`: Array - Array of transaction objects, or 32 Bytes
-    transaction hashes depending on the last given parameter.
+  - `transactions`: Array - Array of transaction objects, or 32 Bytes transaction hashes depending
+    on the last given parameter.
   - `uncles`: an Array of uncle hashes.
 
 > BODY
@@ -414,18 +395,16 @@ curl -sL https://api.staging.sushirelay.com/ \
       "0xf1fa677edda7e5add8e794732c7554cd5459a5c12781dc71de73c7937dfb2775"
     ],
     "transactionsRoot": "0xf98631e290e88f58a46b7032f025969039aa9b5696498efc76baf436fa69b262",
-    "uncles": [
-      "0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"
-    ]
+    "uncles": ["0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"]
   }
 }
 ```
+
 ## eth_getBlockTransactionCountByHash
 
 ### v1/jsonrpc/:network/eth_getBlockTransactionCountByHash
 
-Returns the number of transactions in a block from a block matching the
-given block hash.
+Returns the number of transactions in a block from a block matching the given block hash.
 
 > REQUEST
 
@@ -435,11 +414,9 @@ given block hash.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes)
-  of a block
+- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes) of a block
 
 !!! example
 
@@ -462,8 +439,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the
-  number of transactions in the provided block
+- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the number of transactions in
+  the provided block
 
 > BODY
 
@@ -474,12 +451,12 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x50"
 }
 ```
+
 ## eth_getBlockTransactionCountByNumber
 
 ### v1/jsonrpc/:network/eth_getBlockTransactionCountByNumber
 
-Returns the number of transactions in a block matching the given block
-number.
+Returns the number of transactions in a block matching the given block number.
 
 > REQUEST
 
@@ -489,11 +466,10 @@ number.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
 
 !!! example
@@ -517,8 +493,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the
-  number of transactions in the provided block
+- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the number of transactions in
+  the provided block
 
 > BODY
 
@@ -529,6 +505,7 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x57"
 }
 ```
+
 ## eth_getCode
 
 ### v1/jsonrpc/:network/eth_getCode
@@ -543,13 +520,11 @@ Returns code at a given address.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `ADDRESS` _[required]_ - a string representing the address (20 bytes)
-  of the code
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `ADDRESS` _[required]_ - a string representing the address (20 bytes) of the code
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
 
 !!! example
@@ -584,6 +559,7 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x606060............"
 }
 ```
+
 ## eth_getLogs
 
 ### v1/jsonrpc/:network/eth_getLogs
@@ -598,25 +574,20 @@ Returns an array of all logs matching a given filter object.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
 - `FILTER OBJECT`
-  - `address` _[optional]_ - a string representing the address (20
-    bytes) to check for balance
-  - `fromBlock` _[optional, default is "latest"]_ - an integer block
-    number, or the string "latest", "earliest" or "pending"
-  - `toBlock` _[optional, default is "latest"]_ - an integer block
-    number, or the string "latest", "earliest" or "pending"
-  - `topics`_[optional]_ - Array of 32 Bytes DATA topics. Topics are
-    order-dependent.
-  - `blockhash`:_[optional, \*\*\_future_\*\*]\_ With the addition of
-    EIP-234, `blockHash` will be a new filter option which restricts the
-    logs returned to the single block with the 32-byte hash `blockHash`.
-    Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the
-    block number with hash `blockHash`. If `blockHash` is present in in
-    the filter criteria, then neither `fromBlock` nor `toBlock` are
-    allowed.
+  - `address` _[optional]_ - a string representing the address (20 bytes) to check for balance
+  - `fromBlock` _[optional, default is "latest"]_ - an integer block number, or the string "latest",
+    "earliest" or "pending"
+  - `toBlock` _[optional, default is "latest"]_ - an integer block number, or the string "latest",
+    "earliest" or "pending"
+  - `topics`_[optional]_ - Array of 32 Bytes DATA topics. Topics are order-dependent.
+  - `blockhash`:_[optional, \*\*\_future_\*\*]\_ With the addition of EIP-234, `blockHash` will be a
+    new filter option which restricts the logs returned to the single block with the 32-byte hash
+    `blockHash`. Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with
+    hash `blockHash`. If `blockHash` is present in in the filter criteria, then neither `fromBlock`
+    nor `toBlock` are allowed.
 
 !!! example
 
@@ -639,35 +610,29 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `LOG OBJECTS` - An array of log objects, or an empty array if nothing
-  has changed since last poll.
+- `LOG OBJECTS` - An array of log objects, or an empty array if nothing has changed since last poll.
 
-  - For filters created with `eth_newBlockFilter` the return are block
-    hashes of 32 Bytes), e.g. ["0x3454645634534..."]
-  - For filters created with `eth_newPendingTransactionFilter` the
-    return are transaction hashes of 32 Bytes), e.g.
-    ["0x6345343454645..."].
-  - For filters created with `eth_newFilter` logs are objects with
-    following params:
-    - `removed`: true when the log was removed, due to a chain
-      reorganization. false if its a valid log.
-    - `logIndex`: integer of the log index position in the block. null
-      when its pending log.
-    - `transactionIndex`: integer of the transactions index position log
-      was created from. null when its pending log.
-    - `transactionHash`: 32 Bytes - hash of the transactions this log
-      was created from. null when its pending log.
-    - `blockHash`: 32 Bytes - hash of the block where this log was in.
-      null when its pending. null when its pending log.
-    - `blockNumber`: the block number where this log was in. null when
-      its pending. null when its pending log.
-    - `address`: 20 Bytes - address from which this log originated.
-    - `data`: contains one or more 32 Bytes non-indexed arguments of the
+  - For filters created with `eth_newBlockFilter` the return are block hashes of 32 Bytes), e.g.
+    ["0x3454645634534..."]
+  - For filters created with `eth_newPendingTransactionFilter` the return are transaction hashes of
+    32 Bytes), e.g. ["0x6345343454645..."].
+  - For filters created with `eth_newFilter` logs are objects with following params:
+    - `removed`: true when the log was removed, due to a chain reorganization. false if its a valid
       log.
-    - `topics`: Array of 0 to 4 32 Bytes of indexed log arguments. (In
-      solidity: The first topic is the hash of the signature of the
-      event (e.g. Deposit(address,bytes32,uint256)), except you declared
-      the event with the anonymous specifier.)
+    - `logIndex`: integer of the log index position in the block. null when its pending log.
+    - `transactionIndex`: integer of the transactions index position log was created from. null when
+      its pending log.
+    - `transactionHash`: 32 Bytes - hash of the transactions this log was created from. null when
+      its pending log.
+    - `blockHash`: 32 Bytes - hash of the block where this log was in. null when its pending. null
+      when its pending log.
+    - `blockNumber`: the block number where this log was in. null when its pending. null when its
+      pending log.
+    - `address`: 20 Bytes - address from which this log originated.
+    - `data`: contains one or more 32 Bytes non-indexed arguments of the log.
+    - `topics`: Array of 0 to 4 32 Bytes of indexed log arguments. (In solidity: The first topic is
+      the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you
+      declared the event with the anonymous specifier.)
 
 > BODY
 
@@ -678,9 +643,7 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": [
     {
       "address": "0x1a94fce7ef36bc90959e206ba569a12afbc91ca1",
-      "topics": [
-        "0x241ea03ca20251805084d27d4440371c34a0b85ff108f6bb5611248f73818b80"
-      ],
+      "topics": ["0x241ea03ca20251805084d27d4440371c34a0b85ff108f6bb5611248f73818b80"],
       "data": "0x0000000000000000000000003e3310720058c51f0de456e273c626cdd35065700000000000000000000000000000000000000000000000000000000000003185000000000000000000000000000000000000000000000000000000000000318200000000000000000000000000000000000000000000000000000000005c2a23",
       "blockNumber": "0x5c29fb",
       "transactionHash": "0x3dc91b98249fa9f2c5c37486a2427a3a7825be240c1c84961dfb3063d9c04d50",
@@ -691,9 +654,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     },
     {
       "address": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
-      "topics": [
-        "0x241ea03ca20251805084d27d4440371c34a0b85ff108f6bb5611248f73818b80"
-      ],
+      "topics": ["0x241ea03ca20251805084d27d4440371c34a0b85ff108f6bb5611248f73818b80"],
       "data": "0x00000000000000000000000077ea137625739598666ded665953d26b3d8e374400000000000000000000000000000000000000000000000000000000000749ff00000000000000000000000000000000000000000000000000000000000a749d00000000000000000000000000000000000000000000000000000000005c2a0f",
       "blockNumber": "0x5c29fb",
       "transactionHash": "0x788b1442414cb9c9a36dba2abe250763161a6f6395788a2e808f1b34e92beec1",
@@ -705,6 +666,7 @@ curl -sL https://api.staging.sushirelay.com/ \
   ]
 }
 ```
+
 ## eth_getStorageAt
 
 ### v1/jsonrpc/:network/eth_getStorageAt
@@ -719,15 +681,12 @@ Returns the value from a storage position at a given address.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `ADDRESS` _[required]_ - a string representing the address (20 bytes)
-  of the storage
-- `STORAGE POSITION` _[required]_ - a hex code of the position in the
-  storage
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `ADDRESS` _[required]_ - a string representing the address (20 bytes) of the storage
+- `STORAGE POSITION` _[required]_ - a hex code of the position in the storage
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
 
 !!! example
@@ -751,8 +710,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `STORAGE VALUE` - a hex code of the integer indicating the value of
-  the storage position at the provided address
+- `STORAGE VALUE` - a hex code of the integer indicating the value of the storage position at the
+  provided address
 
 > BODY
 
@@ -764,9 +723,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 }
 ```
 
-Calculating the correct position depends on the storage to retrieve.
-Consider the following contract deployed at
-`0x295a70b2de5e3953354a6a8344e616ed314d7251` by address
+Calculating the correct position depends on the storage to retrieve. Consider the following contract
+deployed at `0x295a70b2de5e3953354a6a8344e616ed314d7251` by address
 `0x391694e7e0b0cce554cb130d723a9d27458f9298`,
 
 ```
@@ -795,16 +753,15 @@ curl -sL -X POST --data '{"jsonrpc":"2.0", "method": "eth_getStorageAt", "params
 }
 ```
 
-Retrieving an element of the map is harder. The position of an element
-in the map is calculated with:
+Retrieving an element of the map is harder. The position of an element in the map is calculated
+with:
 
 ```js
 keccak(LeftPad32(key, 0), LeftPad32(map position, 0))
 ```
 
-This means to retrieve the storage on
-`pos1["0x391694e7e0b0cce554cb130d723a9d27458f9298"]` we need to
-calculate the position with:
+This means to retrieve the storage on `pos1["0x391694e7e0b0cce554cb130d723a9d27458f9298"]` we need
+to calculate the position with:
 
 ```js
 keccak(
@@ -812,11 +769,10 @@ keccak(
     '000000000000000000000000391694e7e0b0cce554cb130d723a9d27458f9298' +
       '0000000000000000000000000000000000000000000000000000000000000001'
   )
-);
+)
 ```
 
-The geth console which comes with the web3 library can be used to make
-the calculation:
+The geth console which comes with the web3 library can be used to make the calculation:
 
 ```js
 > var key = "000000000000000000000000391694e7e0b0cce554cb130d723a9d27458f9298" + "0000000000000000000000000000000000000000000000000000000000000001"
@@ -838,12 +794,12 @@ curl -sL -X POST --data '{"jsonrpc":"2.0", "method": "eth_getStorageAt", "params
   "result": "0x000000000000000000000000000000000000000000000000000000000000162e"
 }
 ```
+
 ## eth_getTransactionByBlockHashAndIndex
 
 ## /v1/jsonrpc/:network/eth_getTransactionByBlockHashAndIndex
 
-Returns information about a transaction by block hash and transaction
-index position.
+Returns information about a transaction by block hash and transaction index position.
 
 > REQUEST
 
@@ -853,13 +809,11 @@ index position.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes)
-  of a block
-- `TRANSACTION INDEX POSITION` _[required]_ - a hex of the integer
-  representing the position in the block
+- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes) of a block
+- `TRANSACTION INDEX POSITION` _[required]_ - a hex of the integer representing the position in the
+  block
 
 !!! example
 
@@ -882,20 +836,15 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `TRANSACTION` - A transaction object, or null when no transaction was
-  found
+- `TRANSACTION` - A transaction object, or null when no transaction was found
   - `hash`: 32 Bytes - hash of the transaction.
-  - `nonce`: the number of transactions made by the sender prior to this
-    one.
-  - `blockHash`: 32 Bytes - hash of the block where this transaction was
-    in. null when its pending.
-  - `blockNumber`: block number where this transaction was in. null when
-    its pending.
-  - `transactionIndex`: integer of the transactions index position in
-    the block. null when its pending.
+  - `nonce`: the number of transactions made by the sender prior to this one.
+  - `blockHash`: 32 Bytes - hash of the block where this transaction was in. null when its pending.
+  - `blockNumber`: block number where this transaction was in. null when its pending.
+  - `transactionIndex`: integer of the transactions index position in the block. null when its
+    pending.
   - `from`: 20 Bytes - address of the sender.
-  - `to`: 20 Bytes - address of the receiver. null when its a contract
-    creation transaction.
+  - `to`: 20 Bytes - address of the receiver. null when its a contract creation transaction.
   - `value`: value transferred in Wei.
   - `gasPrice`: gas price provided by the sender in Wei.
   - `gas`: gas provided by the sender.
@@ -925,12 +874,12 @@ curl -sL https://api.staging.sushirelay.com/ \
     }
 }
 ```
+
 ## eth_getTransactionByBlockNumberAndIndex
 
 ### v1/jsonrpc/:network/eth_getTransactionByBlockNumberAndIndex
 
-Returns information about a transaction by block number and transaction
-index position.
+Returns information about a transaction by block number and transaction index position.
 
 > REQUEST
 
@@ -940,14 +889,13 @@ index position.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
-- `TRANSACTION INDEX POSITION` _[required]_ - a hex of the integer
-  representing the position in the block
+- `TRANSACTION INDEX POSITION` _[required]_ - a hex of the integer representing the position in the
+  block
 
 !!! example
 
@@ -970,20 +918,15 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `TRANSACTION` - A transaction object, or null when no transaction was
-  found
+- `TRANSACTION` - A transaction object, or null when no transaction was found
   - `hash`: 32 Bytes - hash of the transaction.
-  - `nonce`: the number of transactions made by the sender prior to this
-    one.
-  - `blockHash`: 32 Bytes - hash of the block where this transaction was
-    in. null when its pending.
-  - `blockNumber`: block number where this transaction was in. null when
-    its pending.
-  - `transactionIndex`: integer of the transactions index position in
-    the block. null when its pending.
+  - `nonce`: the number of transactions made by the sender prior to this one.
+  - `blockHash`: 32 Bytes - hash of the block where this transaction was in. null when its pending.
+  - `blockNumber`: block number where this transaction was in. null when its pending.
+  - `transactionIndex`: integer of the transactions index position in the block. null when its
+    pending.
   - `from`: 20 Bytes - address of the sender.
-  - `to`: 20 Bytes - address of the receiver. null when its a contract
-    creation transaction.
+  - `to`: 20 Bytes - address of the receiver. null when its a contract creation transaction.
   - `value`: value transferred in Wei.
   - `gasPrice`: gas price provided by the sender in Wei.
   - `gas`: gas provided by the sender.
@@ -1013,6 +956,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     }
 }
 ```
+
 ## eth_getTransactionByHash
 
 ### v1/jsonrpc/:network/eth_getTransactionByHash
@@ -1027,11 +971,9 @@ Returns information about a transaction for a given hash.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `TRANSACTION HASH` _[required]_ - a string representing the hash (32
-  bytes) of a transaction
+- `TRANSACTION HASH` _[required]_ - a string representing the hash (32 bytes) of a transaction
 
 !!! example
 
@@ -1054,20 +996,15 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `TRANSACTION` - A transaction object, or null when no transaction was
-  found
+- `TRANSACTION` - A transaction object, or null when no transaction was found
   - `hash`: 32 Bytes - hash of the transaction.
-  - `nonce`: the number of transactions made by the sender prior to this
-    one.
-  - `blockHash`: 32 Bytes - hash of the block where this transaction was
-    in. null when its pending.
-  - `blockNumber`: block number where this transaction was in. null when
-    its pending.
-  - `transactionIndex`: integer of the transactions index position in
-    the block. null when its pending.
+  - `nonce`: the number of transactions made by the sender prior to this one.
+  - `blockHash`: 32 Bytes - hash of the block where this transaction was in. null when its pending.
+  - `blockNumber`: block number where this transaction was in. null when its pending.
+  - `transactionIndex`: integer of the transactions index position in the block. null when its
+    pending.
   - `from`: 20 Bytes - address of the sender.
-  - `to`: 20 Bytes - address of the receiver. null when its a contract
-    creation transaction.
+  - `to`: 20 Bytes - address of the receiver. null when its a contract creation transaction.
   - `value`: value transferred in Wei.
   - `gasPrice`: gas price provided by the sender in Wei.
   - `gas`: gas provided by the sender.
@@ -1097,6 +1034,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     }
 }
 ```
+
 ## eth_getTransactionCount
 
 ### v1/jsonrpc/:network/eth_getTransactionCount
@@ -1111,13 +1049,12 @@ Returns the number of transactions sent from an address.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `ADDRESS` _[required]_ - a string representing the address (20 bytes)
-  to check for transaction count for
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `ADDRESS` _[required]_ - a string representing the address (20 bytes) to check for transaction
+  count for
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
 
 !!! example
@@ -1141,8 +1078,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `TRANSACTION COUNT` - a hex code of the integer representing the
-  number of transactions sent from this address.
+- `TRANSACTION COUNT` - a hex code of the integer representing the number of transactions sent from
+  this address.
 
 > BODY
 
@@ -1153,12 +1090,13 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x1a"
 }
 ```
+
 ## eth_getTransactionReceipt
 
 ### v1/jsonrpc/:network/eth_getTransactionReceipt
 
-Returns the receipt of a transaction by transaction hash. **Note** that
-the receipt is not available for pending transactions.
+Returns the receipt of a transaction by transaction hash. **Note** that the receipt is not available
+for pending transactions.
 
 > REQUEST
 
@@ -1168,11 +1106,9 @@ the receipt is not available for pending transactions.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `TRANSACTION HASH` _[required]_ - a string representing the hash (32
-  bytes) of a transaction
+- `TRANSACTION HASH` _[required]_ - a string representing the hash (32 bytes) of a transaction
 
 !!! example
 
@@ -1195,30 +1131,23 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `TRANSACTION RECEIPT` - A transaction receipt object, or null when no
-  receipt was found:
+- `TRANSACTION RECEIPT` - A transaction receipt object, or null when no receipt was found:
   - `transactionHash`: 32 Bytes - hash of the transaction.
-  - `transactionIndex`: integer of the transactions index position in
-    the block.
-  - `blockHash`: 32 Bytes - hash of the block where this transaction was
-    in.
+  - `transactionIndex`: integer of the transactions index position in the block.
+  - `blockHash`: 32 Bytes - hash of the block where this transaction was in.
   - `blockNumber`: block number where this transaction was in.
   - `from`: 20 Bytes - address of the sender.
-  - `to`: 20 Bytes - address of the receiver. null when its a contract
-    creation transaction.
-  - `cumulativeGasUsed`: the total amount of gas used when this
-    transaction was executed in the block.
-  - `gasUsed`: the amount of gas used by this specific transaction
-    alone.
-  - `contractAddress`: 20 Bytes - the contract address created, if the
-    transaction was a contract creation, otherwise - null.
-  - `logs`: Array - Array of log objects, which this transaction
-    generated.
-  - `logsBloom`: 256 Bytes - Bloom filter for light clients to quickly
-    retrieve related logs.
+  - `to`: 20 Bytes - address of the receiver. null when its a contract creation transaction.
+  - `cumulativeGasUsed`: the total amount of gas used when this transaction was executed in the
+    block.
+  - `gasUsed`: the amount of gas used by this specific transaction alone.
+  - `contractAddress`: 20 Bytes - the contract address created, if the transaction was a contract
+    creation, otherwise - null.
+  - `logs`: Array - Array of log objects, which this transaction generated.
+  - `logsBloom`: 256 Bytes - Bloom filter for light clients to quickly retrieve related logs.
 
-It also returns _either_: - `root` : 32 bytes of post-transaction
-stateroot (pre Byzantium) - `status`: either 1 (success) or 0 (failure)
+It also returns _either_: - `root` : 32 bytes of post-transaction stateroot (pre Byzantium) -
+`status`: either 1 (success) or 0 (failure)
 
 > BODY
 
@@ -1242,12 +1171,12 @@ stateroot (pre Byzantium) - `status`: either 1 (success) or 0 (failure)
   }
 }
 ```
+
 ## eth_getUncleByBlockHashAndIndex
 
 ### v1/jsonrpc/:network/eth_getUncleByBlockHashAndIndex
 
-Returns information about the 'Uncle' of a block by hash and the Uncle
-index position.
+Returns information about the 'Uncle' of a block by hash and the Uncle index position.
 
 > REQUEST
 
@@ -1257,13 +1186,10 @@ index position.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes)
-  of a block
-- `UNCLE INDEX POSITION` _[required]_ - a hex of the integer indicating
-  the uncle's index position.
+- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes) of a block
+- `UNCLE INDEX POSITION` _[required]_ - a hex of the integer indicating the uncle's index position.
 
 !!! example
 
@@ -1290,22 +1216,16 @@ curl -sL https://api.staging.sushirelay.com/ \
   - `number`: the block number. null when its pending block.
   - `hash`: 32 Bytes - hash of the block. null when its pending block.
   - `parentHash`: 32 Bytes - hash of the parent block.
-  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when
-    its pending block.
+  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when its pending block.
   - `sha3Uncles`: 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block.
-    null when its pending block.
-  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of
-    the block.
-  - `stateRoot`: 32 Bytes - the root of the final state trie of the
+  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block. null when its pending
     block.
-  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the
-    block.
-  - `miner`: 20 Bytes - the address of the beneficiary to whom the
-    mining rewards were given.
+  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of the block.
+  - `stateRoot`: 32 Bytes - the root of the final state trie of the block.
+  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the block.
+  - `miner`: 20 Bytes - the address of the beneficiary to whom the mining rewards were given.
   - `difficulty`: integer of the difficulty for this block.
-  - `totalDifficulty`: integer of the total difficulty of the chain
-    until this block.
+  - `totalDifficulty`: integer of the total difficulty of the chain until this block.
   - `extraData`: the "extra data" field of this block.
   - `size`: integer the size of this block in bytes.
   - `gasLimit`: the maximum gas allowed in this block.
@@ -1344,12 +1264,12 @@ Note: An uncle doesn't contain individual transactions.
   }
 }
 ```
+
 ## eth_getUncleByBlockNumberAndIndex
 
 ### v1/jsonrpc/:network/eth_getUncleByBlockNumberAndIndex
 
-Returns information about the 'Uncle' of a block by hash and the Uncle
-index position.
+Returns information about the 'Uncle' of a block by hash and the Uncle index position.
 
 > REQUEST
 
@@ -1359,14 +1279,12 @@ index position.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
-- `UNCLE INDEX POSITION` _[required]_ - a hex of the integer indicating
-  the uncle's index position.
+- `UNCLE INDEX POSITION` _[required]_ - a hex of the integer indicating the uncle's index position.
 
 !!! example
 
@@ -1393,22 +1311,16 @@ curl -sL https://api.staging.sushirelay.com/ \
   - `number`: the block number. null when its pending block.
   - `hash`: 32 Bytes - hash of the block. null when its pending block.
   - `parentHash`: 32 Bytes - hash of the parent block.
-  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when
-    its pending block.
+  - `nonce`: 8 Bytes - hash of the generated proof-of-work. null when its pending block.
   - `sha3Uncles`: 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block.
-    null when its pending block.
-  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of
-    the block.
-  - `stateRoot`: 32 Bytes - the root of the final state trie of the
+  - `logsBloom`: 256 Bytes - the bloom filter for the logs of the block. null when its pending
     block.
-  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the
-    block.
-  - `miner`: 20 Bytes - the address of the beneficiary to whom the
-    mining rewards were given.
+  - `transactionsRoot`: 32 Bytes - the root of the transaction trie of the block.
+  - `stateRoot`: 32 Bytes - the root of the final state trie of the block.
+  - `receiptsRoot`: 32 Bytes - the root of the receipts trie of the block.
+  - `miner`: 20 Bytes - the address of the beneficiary to whom the mining rewards were given.
   - `difficulty`: integer of the difficulty for this block.
-  - `totalDifficulty`: integer of the total difficulty of the chain
-    until this block.
+  - `totalDifficulty`: integer of the total difficulty of the chain until this block.
   - `extraData`: the "extra data" field of this block.
   - `size`: integer the size of this block in bytes.
   - `gasLimit`: the maximum gas allowed in this block.
@@ -1447,12 +1359,12 @@ Note: An uncle doesn't contain individual transactions.
   }
 }
 ```
+
 ## eth_getUncleCountByBlockHash
 
 ### v1/jsonrpc/:network/eth_getUncleCountByBlockHash
 
-Returns the number of uncles in a block from a block matching the given
-block hash.
+Returns the number of uncles in a block from a block matching the given block hash.
 
 > REQUEST
 
@@ -1462,11 +1374,9 @@ block hash.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes)
-  of a block
+- `BLOCK HASH` _[required]_ - a string representing the hash (32 bytes) of a block
 
 !!! example
 
@@ -1489,8 +1399,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the
-  number of uncles in the provided block
+- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the number of uncles in the
+  provided block
 
 > BODY
 
@@ -1501,12 +1411,12 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x1"
 }
 ```
+
 ## eth_getUncleCountByBlockNumber
 
 ### v1/jsonrpc/:network/eth_getUncleCountByBlockNumber
 
-Returns the number of uncles in a block from a block matching the given
-block number.
+Returns the number of uncles in a block from a block matching the given block number.
 
 > REQUEST
 
@@ -1516,11 +1426,10 @@ block number.
 
 `Content-Type: application/json`
 
-!!! example
-     REQUEST PARAMS
+!!! example REQUEST PARAMS
 
-- `BLOCK PARAMETER` _[required]_ - an integer block number, or the
-  string "latest", "earliest" or "pending", see the
+- `BLOCK PARAMETER` _[required]_ - an integer block number, or the string "latest", "earliest" or
+  "pending", see the
   [default block parameter](https://github.com/ethereum/wiki/wiki/JSON-RPC##the-default-block-parameter)
 
 !!! example
@@ -1544,8 +1453,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the
-  number of uncles in the provided block
+- `BLOCK TRANSACTION COUNT` - a hex code of the integer representing the number of uncles in the
+  provided block
 
 > BODY
 
@@ -1556,12 +1465,13 @@ curl -sL https://api.staging.sushirelay.com/ \
   "result": "0x57"
 }
 ```
+
 ## eth_getWork
 
 ### v1/jsonrpc/:network/eth_getWork
 
-Returns the hash of the current block, the seedHash, and the boundary
-condition to be met ("target").
+Returns the hash of the current block, the seedHash, and the boundary condition to be met
+("target").
 
 > REQUEST
 
@@ -1610,12 +1520,13 @@ curl -sL https://api.staging.sushirelay.com/ \
     ]
 }
 ```
+
 ## eth_hashrate
 
 ### v1/jsonrpc/:network/eth_hashrate
 
-Returns the number of hashes per second that the node is mining with.
-Only applicable when the node is mining.
+Returns the number of hashes per second that the node is mining with. Only applicable when the node
+is mining.
 
 > REQUEST
 
@@ -1646,8 +1557,7 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `HASHRATE` - a hex code of an integer representing the number of
-  hashes per second.
+- `HASHRATE` - a hex code of an integer representing the number of hashes per second.
 
 > BODY
 
@@ -1658,6 +1568,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: "0x38a"
 }
 ```
+
 ## eth_mining
 
 ### v1/jsonrpc/:network/eth_mining
@@ -1704,6 +1615,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: true
 }
 ```
+
 ## eth_protocolVersion
 
 ### v1/jsonrpc/:network/eth_protocolVersion
@@ -1739,8 +1651,7 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `PROTOCOL VERSION` - a string indicating the current ethereum protocol
-  version
+- `PROTOCOL VERSION` - a string indicating the current ethereum protocol version
 
 > BODY
 
@@ -1751,6 +1662,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: "54""
 }
 ```
+
 ## eth_syncing
 
 ### v1/jsonrpc/:network/eth_syncing
@@ -1787,11 +1699,10 @@ curl -sL https://api.staging.sushirelay.com/ \
 > RESULT FIELDS
 
 - `SYNC STATUS` - a boolean as false **only** when not syncing
-- `SYNC BLOCKS` i. `startingBlock` - a hexcode of the integer indicating
-  the block at which the import started (will only be reset, after the
-  sync reached his head) ii. `currentBlock` - a hexcode of the integer
-  indicating the current block, same as eth_blockNumber iii.
-  `highestBlock` - a hexcode of the integer indicating the highest block
+- `SYNC BLOCKS` i. `startingBlock` - a hexcode of the integer indicating the block at which the
+  import started (will only be reset, after the sync reached his head) ii. `currentBlock` - a
+  hexcode of the integer indicating the current block, same as eth_blockNumber iii. `highestBlock` -
+  a hexcode of the integer indicating the highest block
 
 > BODY
 
@@ -1814,6 +1725,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     }
 }
 ```
+
 ## net_listening
 
 ### v1/jsonrpc/:network/net_listening
@@ -1849,8 +1761,8 @@ curl -sL https://api.staging.sushirelay.com/ \
 
 > RESULT FIELDS
 
-- `LISTENING FLAG` - a boolean indicating whether the client is actively
-  listening for network connections
+- `LISTENING FLAG` - a boolean indicating whether the client is actively listening for network
+  connections
 
 > BODY
 
@@ -1861,6 +1773,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: true
 }
 ```
+
 ## net_peerCount
 
 ### v1/jsonrpc/:network/net_peerCount
@@ -1907,6 +1820,7 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: "0x64"
 }
 ```
+
 ## net_version
 
 ### v1/jsonrpc/:network/net_version
@@ -1953,15 +1867,14 @@ curl -sL https://api.staging.sushirelay.com/ \
     result: "1"
 }
 ```
+
 ## method
 
 ### v1/jsonrpc/network/method
 
-A request using an "HTTP GET-compatible" (non-state-changing) JSON-RPC
-method. Most Ethereum JSON-RPC methods can be described in this way,
-since they query the blockchain for various pieces of information. Use
-the `/v1/jsonrpc/{network}/methods` endpoint to get the list of
-permitted methods.
+A request using an "HTTP GET-compatible" (non-state-changing) JSON-RPC method. Most Ethereum
+JSON-RPC methods can be described in this way, since they query the blockchain for various pieces of
+information. Use the `/v1/jsonrpc/{network}/methods` endpoint to get the list of permitted methods.
 
 ###### GET
 
@@ -1969,7 +1882,7 @@ permitted methods.
 
 | Parameters |                                                                                                                                                                |        |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| network    | Ethereum network in lowercase. Possible values: `api.staging., `ropsten`, `kovan`, `rinkeby`                                                                       | Enum   |
+| network    | Ethereum network in lowercase. Possible values: `api.staging., `ropsten`, `kovan`, `rinkeby`                                                                   | Enum   |
 | method     | JSON-RPC method. Use the `/v1/jsonrpc/{network}/methods` endpoint to get the list of permitted methods.                                                        | String |
 | params     | This is the params field that would normally be part of the JSON-RPC POST body. Use the exact same format. If it's omitted, it will default to an empty array. | Array  |
 
@@ -2079,12 +1992,13 @@ Ethereum client error
 > HEADERS
 
 `Content-Type:application/json`
+
 ## methods
 
 ### v1/jsonrpc/network/methods
 
-The JSON-RPC methods supported by the `/v1/jsonrpc/{network}/{method}`
-(GET) and `/v1/jsonrpc/{network}` (POST) endpoints.
+The JSON-RPC methods supported by the `/v1/jsonrpc/{network}/{method}` (GET) and
+`/v1/jsonrpc/{network}` (POST) endpoints.
 
 ###### GET
 
@@ -2092,8 +2006,8 @@ The JSON-RPC methods supported by the `/v1/jsonrpc/{network}/{method}`
 
 ###### Parameters
 
-| Attributes |                                                                                          |      |
-| ---------- | ---------------------------------------------------------------------------------------- | ---- |
+| Attributes |                                                                                              |      |
+| ---------- | -------------------------------------------------------------------------------------------- | ---- |
 | network    | Ethereum network in lowercase. Possible values: `api.staging., `ropsten`, `kovan`, `rinkeby` | enum |
 
 ###### Request
@@ -2177,14 +2091,14 @@ Server error
 > HEADERS
 
 `Content-Type:application/json`
+
 ## symbol
 
 ### v1/jsonrpc/symbol
 
-Get pricing (ticker) data for various currency pairs (fiat, crypto, and
-tokens) using data from several exchanges. This endpoint shows the price
-at the exchange with the most volume for the symbol. Use the
-`/v1/ticker/symbols` endpoint for the full list of supported symbols.
+Get pricing (ticker) data for various currency pairs (fiat, crypto, and tokens) using data from
+several exchanges. This endpoint shows the price at the exchange with the most volume for the
+symbol. Use the `/v1/ticker/symbols` endpoint for the full list of supported symbols.
 
 ###### GET
 
@@ -2233,14 +2147,14 @@ curl -sL --include \
 > HEADERS
 
 `Content-Type:application/json`
+
 ## full
 
 ### v1/ticker/symbol/full
 
-Get pricing (ticker) data for various currency pairs (fiat, crypto, and
-tokens) using data from several exchanges. This endpoint shows the price
-at various exchanges where the symbol is traded. Use the
-`/v1/ticker/symbols` endpoint for the full list of supported symbols.
+Get pricing (ticker) data for various currency pairs (fiat, crypto, and tokens) using data from
+several exchanges. This endpoint shows the price at various exchanges where the symbol is traded.
+Use the `/v1/ticker/symbols` endpoint for the full list of supported symbols.
 
 ###### GET
 
@@ -2274,7 +2188,7 @@ curl -sL --include \
 | `ask`                                | number              |
 | `exchange`                           | string              |
 | `volume`                             | number              |
-| `timestamp | number                  |
+| `timestamp                           | number              |
 
 ######## Full ticker Response
 
@@ -2283,12 +2197,12 @@ curl -sL --include \
 > HEADERS
 
 `Content-Type:application/json`
+
 ## symbols
 
 ### v1/ticker/symbols
 
-Get a list of supported symbols (currency pairs), including fiat,
-crypto, and tokens
+Get a list of supported symbols (currency pairs), including fiat, crypto, and tokens
 
 ###### GET
 
@@ -2317,12 +2231,12 @@ curl -sL --include \
 > HEADERS
 
 `Content-Type:application/json`
+
 ## v1 Blacklist
 
 ### v1/blacklist
 
-Return a blacklist of phishing sites. This list is maintained by GitHub
-user 409H at
+Return a blacklist of phishing sites. This list is maintained by GitHub user 409H at
 [https://github.com/409H/EtherAddressLookup/blob/master/blacklists/domains.json](https://github.com/409H/EtherAddressLookup/blob/master/blacklists/domains.json).
 
 ###### GET
@@ -2384,12 +2298,13 @@ Github is having issues
 > HEADERS
 
 `Content-Type:application/json`
+
 ## v2 Blacklist
 
 ### v2/blacklist
 
-Return a blacklist of phishing sites, as well as a whitelist and a
-fuzzylist. This list is maintained by the MetaMask project at
+Return a blacklist of phishing sites, as well as a whitelist and a fuzzylist. This list is
+maintained by the MetaMask project at
 [https://github.com/MetaMask/eth-phishing-detect/blob/master/src/config.json](https://github.com/MetaMask/eth-phishing-detect/blob/master/src/config.json).
 
 ###### GET
@@ -2506,6 +2421,7 @@ Github is having issues
 > HEADERS
 
 `Content-Type:application/json`
+
 ## web3_clientVersion
 
 ### v1/jsonrpc/:network/web3_clientVersion

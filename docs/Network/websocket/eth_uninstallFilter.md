@@ -1,8 +1,8 @@
 # eth_uninstallFilter
 
-Uninstalls a filter with given id. Should always be called when watch is
-no longer needed. Additonally Filters timeout when they aren't requested
-with eth_getFilterChanges for a period of time.
+Uninstalls a filter with given id. Should always be called when watch is no longer needed.
+Additonally Filters timeout when they aren't requested with eth_getFilterChanges for a period of
+time.
 
 #### EXAMPLE
 
@@ -16,8 +16,7 @@ with eth_getFilterChanges for a period of time.
 
 #### RESULT FIELDS
 
-- `UNINSTALLED FLAG` - true if the filter was successfully uninstalled,
-  otherwise false.
+- `UNINSTALLED FLAG` - true if the filter was successfully uninstalled, otherwise false.
 
 #### BODY
 

@@ -33,8 +33,8 @@ curl https://mainnet.backbonecabal.xyz/ \
 
 #### RESULT FIELDS
 
-- `LISTENING FLAG` - a boolean indicating whether the client is actively
-  listening for network connections
+- `LISTENING FLAG` - a boolean indicating whether the client is actively listening for network
+  connections
 
 #### BODY
 
