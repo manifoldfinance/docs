@@ -10,12 +10,13 @@
 
 ## User Example
 
-!!! info Since the JSON-RPC spec allows responses to be returned in a different order than sent, we
-need a mechanism for choosing a canonical id from a list that doesn't depend on the order. This
-chooses the "minimum" id by an arbitrary ordering: the smallest string if possible, otherwise the
-smallest number, otherwise null.
+!!! info 
+  Since the JSON-RPC spec allows responses to be returned in a different order than sent, we
+  need a mechanism for choosing a canonical id from a list that doesn't depend on the order. This
+  chooses the "minimum" id by an arbitrary ordering: the smallest string if possible, otherwise the
+  smallest number, otherwise null.
 
-!!! example end-user transaction example for interacting with the OpenMEV
+
 
 ```js
 order = {

@@ -6,8 +6,10 @@ date: 2021-10-06
 
 # Omnibus
 
-!!! attention This aggregated documentation is under active development, some page may be
-incomplete. Please visit our forums or discord for specific questions!
+!!! abstract
+
+    OpenMEV employs a microservices architecture with independent services interacting with one another to provide a composable transaction queue, order management system with a price-time priority matching engine. There are three types of services: 
+    Application Services, Infrastructure Services, Tracing Services. The application services implement the business logic of the underlying platform, while the infrastructure services support the distributed environment under which the application services run and collaborate with one another.
 
 ## OpenMEV Platform Documentation
 
