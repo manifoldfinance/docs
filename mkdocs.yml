@@ -1,4 +1,4 @@
-site_name: Manifold Finance
+site_name: Manifold Finance Omnibus Documentation
 site_url: https://docs.manifoldfinance.com/
 site_description: Manifold Finance documentation.
 site_author: Manifold Finance
@@ -78,7 +78,8 @@ extra:
       link: https://twitter.com/foldfinance
     - icon: fontawesome/brands/telegram
       link: https://t.me/manifoldfinance/
-
+  version:
+    provider: mike
   latest_version_warning:
     url_contains: /latest/
     text: 'You are reading m the development version documentation and

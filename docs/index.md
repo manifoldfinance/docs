@@ -1,15 +1,12 @@
 ---
-title: Manifold FInance Omnibus Documentation
-summary: Manifold Finance and OpenMEV Documentation
-date: 2021-10-06
+template: overrides/main.html
 ---
 
 # Omnibus
 
 !!! abstract
 
-    OpenMEV employs a microservices architecture with independent services interacting with one another to provide a composable transaction queue, order management system with a price-time priority matching engine. There are three types of services: 
-    Application Services, Infrastructure Services, Tracing Services. The application services implement the business logic of the underlying platform, while the infrastructure services support the distributed environment under which the application services run and collaborate with one another.
+    OpenMEV employs a fault-tolerant architecture with independent services interacting with one another to provide a composable transaction queue, order management system with a price-time priority matching engine. 
 
 ## OpenMEV Platform Documentation
 
@@ -19,6 +16,12 @@ date: 2021-10-06
 - Searcher Integration
 - Formulas and Proofs
 - Technical: Technical overview on specific category
+
+!!! note 
+
+    There are three categories of services provided by OpenMEV
+    Application Services, Infrastructure Services, Tracing Services. 
+    The application services implement the business logic of the underlying platform, while the infrastructure services support the distributed environment under which the application services run and collaborate with one another.
 
 ### SushiSwap
 
