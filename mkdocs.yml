@@ -20,7 +20,7 @@ theme:
     - content.code.annotate
     - content.tabs.link
     # - header.autohide
-    # - navigation.expand
+    - navigation.expand
     - navigation.indexes
     # - navigation.instant
     - navigation.sections
@@ -32,7 +32,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-    # - toc.integrate
+    - toc.integrate
   palette:
     - scheme: default
       primary: indigo
@@ -57,11 +57,14 @@ theme:
 plugins:
   - search:
       separator: "[\\s\\-,:!=\\[\\]()\"/]+|\\.(?!\\d)|&[lg]t;|(?!\\b)(?=[A-Z][a-z])"
-  - awesome-pages
   - minify:
       minify_html: true
 
 # Customization
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 extra:
   analytics:
     provider: google
@@ -91,7 +94,7 @@ extra:
 # Extensions
 markdown_extensions:
   - toc:
-      permalink: 
+      permalink: true
       toc_depth: 3
   - codehilite
   - markdown_include.include:
@@ -103,8 +106,6 @@ markdown_extensions:
   - footnotes
   - meta
   - md_in_html
-  - toc:
-      permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -137,7 +138,41 @@ markdown_extensions:
 nav:
 - Omnibus: index.md
 - FAQ: faq.md
-- OpenMEV & Sushiswap: sushiswap-overview.md
+- Sushiswap:
+    Overview: sushiswap-overview.md
+    Rebate Process: rebate-process.md
+    Searchers: searchers.md
+- Sushi API:
+  - FeeInformation: SushiSwap/FeeInformation.md
+  - Order: SushiSwap/Order.md
+  - OrderCancellation: SushiSwap/OrderCancellation.md
+  - OrderCreation: SushiSwap/OrderCreation.md
+  - OrderMetaData: SushiSwap/OrderMetaData.md
+  - OrderPostError: SushiSwap/OrderPostError.md
+  - OrderType: SushiSwap/OrderType.md
+  - SushiSwap User API: SushiSwap/README.md
+  - Trade: SushiSwap/Trade.md
+  - Apis:
+    - SushiSwap API Overview: SushiSwap/Apis/README.md
+  - gettingStarted:
+    - Make Requests: SushiSwap/gettingStarted/makeRequests.md
+    - Useful Links: SushiSwap/gettingStarted/usefulLinks.md
+  - Models:
+    - FeeInformation: SushiSwap/Models/FeeInformation.md
+    - Order: SushiSwap/Models/Order.md
+    - OrderCancellation: SushiSwap/Models/OrderCancellation.md
+    - OrderCreation: SushiSwap/Models/OrderCreation.md
+    - OrderMetaData: SushiSwap/Models/OrderMetaData.md
+    - OrderPostError: SushiSwap/Models/OrderPostError.md
+    - OrderType: SushiSwap/Models/OrderType.md
+    - Trade: SushiSwap/Models/Trade.md
+- OpenMEV:
+  - OpenMEV Mechanics and Formulas: OpenMEV/math.md
+  - MEV Risks: OpenMEV/mev-risks.md
+  - Comparison Matrix: compare-table.md
+  - OpenMEV: OpenMEV/openmev.md
+  - Searchers: OpenMEV/searchers.md
+
 - Network:
   - Getting Started: Network/README.md
   - api:
@@ -198,34 +233,3 @@ nav:
     - parity_subscribe: Network/websocket/parity_subscribe.md
     - parity_unsubscribe: Network/websocket/parity_unsubscribe.md
     - Introduction: Network/websocket/README.md
-- OpenMEV:
-  - OpenMEV Mechanics and Formulas: OpenMEV/math.md
-  - 'MEV Risks ': OpenMEV/mev-risks.md
-  - Pool Examples for ETH: OpenMEV/mining-pools.md
-  - OpenMEV Technical Overview: OpenMEV/openmev-diagrams.md
-  - OpenMEV: OpenMEV/openmev.md
-  - Searchers: OpenMEV/searchers.md
-- SushiSwap:
-  - FeeInformation: SushiSwap/FeeInformation.md
-  - Order: SushiSwap/Order.md
-  - OrderCancellation: SushiSwap/OrderCancellation.md
-  - OrderCreation: SushiSwap/OrderCreation.md
-  - OrderMetaData: SushiSwap/OrderMetaData.md
-  - OrderPostError: SushiSwap/OrderPostError.md
-  - OrderType: SushiSwap/OrderType.md
-  - SushiSwap User API: SushiSwap/README.md
-  - Trade: SushiSwap/Trade.md
-  - Apis:
-    - SushiSwap API Overview: SushiSwap/Apis/README.md
-  - gettingStarted:
-    - Make Requests: SushiSwap/gettingStarted/makeRequests.md
-    - Useful Links: SushiSwap/gettingStarted/usefulLinks.md
-  - Models:
-    - FeeInformation: SushiSwap/Models/FeeInformation.md
-    - Order: SushiSwap/Models/Order.md
-    - OrderCancellation: SushiSwap/Models/OrderCancellation.md
-    - OrderCreation: SushiSwap/Models/OrderCreation.md
-    - OrderMetaData: SushiSwap/Models/OrderMetaData.md
-    - OrderPostError: SushiSwap/Models/OrderPostError.md
-    - OrderType: SushiSwap/Models/OrderType.md
-    - Trade: SushiSwap/Models/Trade.md
