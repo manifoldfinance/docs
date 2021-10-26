@@ -14,7 +14,7 @@ Rebating a transaction is determined by:
 
 - What is the transaction cost for the eligible transaction?
 
-  - Thi s the value that the end user utilized in submitting their transaction.
+  - This is the value that the end user utilized in submitting their transaction.
 
 - Calculate the Gas Reporting Index value
 
